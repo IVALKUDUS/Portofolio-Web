@@ -197,4 +197,17 @@
       if (e.key === 'ArrowRight' && sl.matches(':hover, :focus-within')) { geser(1); reset(); }
     });
   }
+
+  /* ---- Papan & tali: goyangan kecil, sudut disesuaikan tinggi agar ujung tali tetap menempel ---- */
+  const atur = () => {
+    const rad = 180 / Math.PI, geser = 2.6;
+    $$('.spanduk-besar').forEach((b) => {
+      b.style.setProperty('--amp', (Math.atan(geser / b.offsetHeight) * rad).toFixed(3) + 'deg');
+      const t = b.nextElementSibling;
+      if (t && t.classList.contains('tali-antar')) t.style.setProperty('--sk', (Math.atan(geser / t.getBoundingClientRect().height) * rad).toFixed(3) + 'deg');
+    });
+  };
+  atur();
+  addEventListener('load', atur);
+  addEventListener('resize', atur);
 })();

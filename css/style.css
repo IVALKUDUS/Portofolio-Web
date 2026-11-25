@@ -200,3 +200,10 @@ h1,h2,h3{font-family:"Quicksand","Nunito",system-ui,sans-serif;margin:0;line-hei
 @media(max-width:860px){.proyek-papan,.proyek-sipay{grid-template-columns:1fr;gap:1.6rem}}
 .tali-antar{display:block;width:min(100%,1000px);height:64px;margin:-2px auto -2px;fill:none;stroke:#6b4e2e;stroke-width:2.5;stroke-linecap:round}
 @media(max-width:860px){.tali-antar{height:36px}}
+
+/* Goyangan halus: papan menggantung dari atas, tali ikut bergerak */
+.spanduk-besar{transform-origin:50% 0;animation:papan var(--dur,8s) ease-in-out infinite alternate;animation-delay:var(--w,0s)}
+@keyframes papan{from{transform:rotate(calc(var(--amp,.25deg) * -1))}to{transform:rotate(var(--amp,.25deg))}}
+.tali-antar{transform-origin:50% 100%;animation:talisway var(--dur,8s) ease-in-out infinite alternate;animation-delay:var(--w,0s)}
+@keyframes talisway{from{transform:skewX(calc(var(--sk,2deg) * -1))}to{transform:skewX(var(--sk,2deg))}}
+@media(prefers-reduced-motion:reduce){.spanduk-besar,.tali-antar{animation:none}}
