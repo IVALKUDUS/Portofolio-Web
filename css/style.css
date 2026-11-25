@@ -184,7 +184,7 @@ h1,h2,h3{font-family:"Quicksand","Nunito",system-ui,sans-serif;margin:0;line-hei
 #tab-admin:focus-visible~.tab-bar [for=tab-admin] .spanduk,#tab-petugas:focus-visible~.tab-bar [for=tab-petugas] .spanduk,#tab-peminjam:focus-visible~.tab-bar [for=tab-peminjam] .spanduk{outline:3px solid var(--sorot);outline-offset:3px}
 
 /* Papan proyek (SIPAY & Restoran) */
-.proyek-papan{margin-top:3.5rem;display:grid;grid-template-columns:1fr 1.5fr;gap:2.5rem;align-items:start}
+.proyek-papan{margin-top:0;display:grid;grid-template-columns:1fr 1.5fr;gap:2.5rem;align-items:start}
 .proyek-sipay{grid-template-columns:minmax(210px,.75fr) 1.5fr;align-items:center}
 .proyek-papan p+p{margin-top:.9rem}
 .proyek p.kontribusi{color:var(--band-teks)}
@@ -198,3 +198,5 @@ h1,h2,h3{font-family:"Quicksand","Nunito",system-ui,sans-serif;margin:0;line-hei
 :root[data-tema=gelap] .balon-sipay>svg{filter:brightness(1.25) drop-shadow(0 0 12px rgba(255,190,90,.8))}
 @media(prefers-reduced-motion:reduce){.gantung{animation:none}}
 @media(max-width:860px){.proyek-papan,.proyek-sipay{grid-template-columns:1fr;gap:1.6rem}}
+.tali-antar{display:block;width:min(100%,1000px);height:64px;margin:-2px auto -2px;fill:none;stroke:#6b4e2e;stroke-width:2.5;stroke-linecap:round}
+@media(max-width:860px){.tali-antar{height:36px}}
